@@ -1,25 +1,122 @@
-/**
-  |============================
-  | include css partials with
-  | default @import url()
-  |============================
-*/
-@import url('./reset.css');
-@import url('./vite-promo.css');
-@import url('./header.css');
+header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+}
 
-:root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 400;
+.gallery {
+  margin-bottom: 32px;
+}
 
-  color: #242424;
-  background-color: rgba(255, 255, 255, 0.87);
+.form-input {
+  border: 1px solid #808080;
+  border-radius: 4px;
+  width: 272px;
+  height: 40px;
+  padding-left: 16px;
+  margin-right: 8px;
+}
+.form-btn {
+  background: #4e75ff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  width: 98px;
+  height: 40px;
+  color: #fff;
+  transition: background-color 0.3s ease; /* Додано для плавності анімації */
+}
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+.form-btn:hover {
+  background: #6c8cff;
+}
+
+.wrapp-btn {
+  display: flex;
+  justify-content: center;
+}
+
+.load-more-btn {
+  background: #4e75ff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  width: 98px;
+  height: 40px;
+  color: #fff;
+  transition: background-color 0.3s ease; /* Додано для плавності анімації */
+}
+
+.load-more-btn:hover {
+  background: #6c8cff;
+}
+
+.image-link img {
+  width: 360px;
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+}
+h4 {
+  margin-bottom: 11px;
+}
+
+.image-card {
+  position: relative; /* Встановлюємо позицію на відносну */
+  z-index: 1; /* Задаємо величину z-index для .image-card */
+}
+
+.info-container {
+  border: 1px solid #808080;
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  width: 359px;
+  height: 54px;
+  color: #2e2f42;
+  background-color: #fff;
+  position: absolute; /* Встановлюємо позицію на абсолютну */
+  top: 193px; /* Позиція зверху відносно батьківського елементу .image-card */
+  left: -1; /* Позиція зліва відносно батьківського елементу .image-card */
+  z-index: 2; /* Задаємо величину z-index більшу, ніж в .image-card, щоб .info-container був поверх неї */
+}
+
+.loading-indicator {
+  width: 48px;
+  height: 48px;
+  border: 3px solid #360033;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+.loading-indicator::after {
+  content: '';
+  position: absolute;
+  box-sizing: border-box;
+  left: 20px;
+  top: 31px;
+  border: 10px solid transparent;
+  border-right-color: #360033;
+  transform: rotate(-40deg);
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
